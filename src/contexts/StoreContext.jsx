@@ -21,8 +21,9 @@ function StoreProvider({ children }) {
   useEffect(function () {
     async function store() {
       try {
-        const res = await fetch("http://localhost:8000/products");
+        const res = await fetch("/api/products");
         const data = await res.json();
+        console.log("data:", data);
         setProducts(data);
       } catch (err) {
         console.log(err);
